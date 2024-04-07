@@ -76,8 +76,8 @@ export default {
 						const url = `https://sub.xf.free.hr/auto?host=hostUrl&uuid=idMark&path=/`;
 						const bestSubConfig = await fetch(url, { headers: headers });
 						const decodedData = self.atob(bestSubConfig);
-						decodedData = decodedData.replace(/hostUrl/g, ${request.headers.get('Host')});
-						decodedData = decodedData.replace(/idMark/g, ${userID});
+						decodedData = decodedData.replace(/hostUrl/g, request.headers.get('Host'));
+						decodedData = decodedData.replace(/idMark/g, userID);
 						decodedData = decodedData.replace(/path=%2F%3Fed%3D2048/g, 'path=%2F');
 						const bestSubConfig = self.btoa(decodedData);
 						return bestSubConfig;
