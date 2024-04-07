@@ -79,7 +79,7 @@ export default {
 						decodedData = decodedData.replace(/hostUrl/g, request.headers.get('Host'));
 						decodedData = decodedData.replace(/idMark/g, userID);
 						decodedData = decodedData.replace(/path=%2F%3Fed%3D2048/g, 'path=%2F');
-						const bestSubConfig = self.btoa(decodedData);
+						bestSubConfig = self.btoa(decodedData);
 						return bestSubConfig;
 					};
 					default:
